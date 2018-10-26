@@ -53,5 +53,28 @@ namespace kafedra_DBGrid
                     return;
                 }
         }
+
+        //поиск фильтр
+
+        private void textBox1_TextChanged(object sender, EventArgs e) 
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = this.kafDataSet.KafDB;
+
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    dataGridView1.Rows[i].Selected = false;
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                        if (dataGridView1.Rows[i].Cells[j].Value != null)
+                            if (dataGridView1.Rows[i].Cells[j].Value.ToString().ToLower().Contains(textBox1.Text.ToLower()))
+                            {
+                                dataGridView1.Rows[i].Selected = true;
+                                dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                break;
+                            }
+                }
+            }
+        }
     }
 }

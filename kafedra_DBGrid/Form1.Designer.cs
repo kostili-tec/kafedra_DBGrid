@@ -30,9 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kafDataSet = new kafedra_DBGrid.KafDataSet();
             this.kafDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kafDataSet = new kafedra_DBGrid.KafDataSet();
             this.kafDBTableAdapter = new kafedra_DBGrid.KafDataSetTableAdapters.KafDBTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameButton = new System.Windows.Forms.Button();
+            this.TestButton = new System.Windows.Forms.Button();
+            this.kafDataSet1 = new kafedra_DBGrid.KafDataSet();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kfioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kpostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,14 +45,9 @@
             this.ksubjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kloadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ksalaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.NameButton = new System.Windows.Forms.Button();
-            this.TestButton = new System.Windows.Forms.Button();
-            this.kafDataSet1 = new kafedra_DBGrid.KafDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kafDBBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kafDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,64 +66,22 @@
             this.dataGridView1.DataSource = this.kafDBBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(51, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 447);
+            this.dataGridView1.Size = new System.Drawing.Size(839, 429);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // kafDataSet
-            // 
-            this.kafDataSet.DataSetName = "KafDataSet";
-            this.kafDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kafDBBindingSource
             // 
             this.kafDBBindingSource.DataMember = "KafDB";
             this.kafDBBindingSource.DataSource = this.kafDataSet;
             // 
+            // kafDataSet
+            // 
+            this.kafDataSet.DataSetName = "KafDataSet";
+            this.kafDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // kafDBTableAdapter
             // 
             this.kafDBTableAdapter.ClearBeforeFill = true;
-            // 
-            // кодDataGridViewTextBoxColumn
-            // 
-            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
-            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
-            // 
-            // kfioDataGridViewTextBoxColumn
-            // 
-            this.kfioDataGridViewTextBoxColumn.DataPropertyName = "k_fio";
-            this.kfioDataGridViewTextBoxColumn.HeaderText = "k_fio";
-            this.kfioDataGridViewTextBoxColumn.Name = "kfioDataGridViewTextBoxColumn";
-            // 
-            // kpostDataGridViewTextBoxColumn
-            // 
-            this.kpostDataGridViewTextBoxColumn.DataPropertyName = "k_post";
-            this.kpostDataGridViewTextBoxColumn.HeaderText = "k_post";
-            this.kpostDataGridViewTextBoxColumn.Name = "kpostDataGridViewTextBoxColumn";
-            // 
-            // kdegreeDataGridViewTextBoxColumn
-            // 
-            this.kdegreeDataGridViewTextBoxColumn.DataPropertyName = "k_degree";
-            this.kdegreeDataGridViewTextBoxColumn.HeaderText = "k_degree";
-            this.kdegreeDataGridViewTextBoxColumn.Name = "kdegreeDataGridViewTextBoxColumn";
-            // 
-            // ksubjectDataGridViewTextBoxColumn
-            // 
-            this.ksubjectDataGridViewTextBoxColumn.DataPropertyName = "k_subject";
-            this.ksubjectDataGridViewTextBoxColumn.HeaderText = "k_subject";
-            this.ksubjectDataGridViewTextBoxColumn.Name = "ksubjectDataGridViewTextBoxColumn";
-            // 
-            // kloadDataGridViewTextBoxColumn
-            // 
-            this.kloadDataGridViewTextBoxColumn.DataPropertyName = "k_load";
-            this.kloadDataGridViewTextBoxColumn.HeaderText = "k_load";
-            this.kloadDataGridViewTextBoxColumn.Name = "kloadDataGridViewTextBoxColumn";
-            // 
-            // ksalaryDataGridViewTextBoxColumn
-            // 
-            this.ksalaryDataGridViewTextBoxColumn.DataPropertyName = "k_salary";
-            this.ksalaryDataGridViewTextBoxColumn.HeaderText = "k_salary";
-            this.ksalaryDataGridViewTextBoxColumn.Name = "ksalaryDataGridViewTextBoxColumn";
             // 
             // label1
             // 
@@ -140,6 +98,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // NameButton
             // 
@@ -166,6 +125,51 @@
             this.kafDataSet1.DataSetName = "KafDataSet";
             this.kafDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "id";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.Width = 35;
+            // 
+            // kfioDataGridViewTextBoxColumn
+            // 
+            this.kfioDataGridViewTextBoxColumn.DataPropertyName = "k_fio";
+            this.kfioDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.kfioDataGridViewTextBoxColumn.Name = "kfioDataGridViewTextBoxColumn";
+            this.kfioDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // kpostDataGridViewTextBoxColumn
+            // 
+            this.kpostDataGridViewTextBoxColumn.DataPropertyName = "k_post";
+            this.kpostDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.kpostDataGridViewTextBoxColumn.Name = "kpostDataGridViewTextBoxColumn";
+            this.kpostDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // kdegreeDataGridViewTextBoxColumn
+            // 
+            this.kdegreeDataGridViewTextBoxColumn.DataPropertyName = "k_degree";
+            this.kdegreeDataGridViewTextBoxColumn.HeaderText = "Ученая степень";
+            this.kdegreeDataGridViewTextBoxColumn.Name = "kdegreeDataGridViewTextBoxColumn";
+            // 
+            // ksubjectDataGridViewTextBoxColumn
+            // 
+            this.ksubjectDataGridViewTextBoxColumn.DataPropertyName = "k_subject";
+            this.ksubjectDataGridViewTextBoxColumn.HeaderText = "Предмет";
+            this.ksubjectDataGridViewTextBoxColumn.Name = "ksubjectDataGridViewTextBoxColumn";
+            // 
+            // kloadDataGridViewTextBoxColumn
+            // 
+            this.kloadDataGridViewTextBoxColumn.DataPropertyName = "k_load";
+            this.kloadDataGridViewTextBoxColumn.HeaderText = "Загрузка";
+            this.kloadDataGridViewTextBoxColumn.Name = "kloadDataGridViewTextBoxColumn";
+            // 
+            // ksalaryDataGridViewTextBoxColumn
+            // 
+            this.ksalaryDataGridViewTextBoxColumn.DataPropertyName = "k_salary";
+            this.ksalaryDataGridViewTextBoxColumn.HeaderText = "Зарплата";
+            this.ksalaryDataGridViewTextBoxColumn.Name = "ksalaryDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,8 +184,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kafDBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kafDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,6 +198,11 @@
         private KafDataSet kafDataSet;
         private System.Windows.Forms.BindingSource kafDBBindingSource;
         private KafDataSetTableAdapters.KafDBTableAdapter kafDBTableAdapter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button NameButton;
+        private System.Windows.Forms.Button TestButton;
+        private KafDataSet kafDataSet1;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kfioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kpostDataGridViewTextBoxColumn;
@@ -201,11 +210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ksubjectDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kloadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ksalaryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button NameButton;
-        private System.Windows.Forms.Button TestButton;
-        private KafDataSet kafDataSet1;
     }
 }
 
