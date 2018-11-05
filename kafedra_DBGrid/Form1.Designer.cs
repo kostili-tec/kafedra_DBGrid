@@ -30,30 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kafDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kafDataSet = new kafedra_DBGrid.KafDataSet();
-            this.kafDBTableAdapter = new kafedra_DBGrid.KafDataSetTableAdapters.KafDBTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.NameButton = new System.Windows.Forms.Button();
-            this.TestButton = new System.Windows.Forms.Button();
-            this.kafDataSet1 = new kafedra_DBGrid.KafDataSet();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kfioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kpostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kdegreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ksubjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kloadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ksalaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.k_parm_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kafDBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kafedra1DataSet = new kafedra_DBGrid.Kafedra1DataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameButton = new System.Windows.Forms.Button();
+            this.TestButton = new System.Windows.Forms.Button();
+            this.kafDBTableAdapter1 = new kafedra_DBGrid.Kafedra1DataSetTableAdapters.KafDBTableAdapter();
+            this.save_button = new System.Windows.Forms.Button();
+            this.to_excel_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDBBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kafDBBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kafedra1DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.кодDataGridViewTextBoxColumn,
@@ -62,68 +63,12 @@
             this.kdegreeDataGridViewTextBoxColumn,
             this.ksubjectDataGridViewTextBoxColumn,
             this.kloadDataGridViewTextBoxColumn,
-            this.ksalaryDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.kafDBBindingSource;
+            this.k_parm_time});
+            this.dataGridView1.DataSource = this.kafDBBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(51, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(839, 429);
+            this.dataGridView1.Size = new System.Drawing.Size(896, 429);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // kafDBBindingSource
-            // 
-            this.kafDBBindingSource.DataMember = "KafDB";
-            this.kafDBBindingSource.DataSource = this.kafDataSet;
-            // 
-            // kafDataSet
-            // 
-            this.kafDataSet.DataSetName = "KafDataSet";
-            this.kafDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kafDBTableAdapter
-            // 
-            this.kafDBTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Введите значение:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(165, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // NameButton
-            // 
-            this.NameButton.Location = new System.Drawing.Point(393, 18);
-            this.NameButton.Name = "NameButton";
-            this.NameButton.Size = new System.Drawing.Size(75, 23);
-            this.NameButton.TabIndex = 3;
-            this.NameButton.Text = "Поиск";
-            this.NameButton.UseVisualStyleBackColor = true;
-            this.NameButton.Click += new System.EventHandler(this.NameButton_Click);
-            // 
-            // TestButton
-            // 
-            this.TestButton.Location = new System.Drawing.Point(532, 18);
-            this.TestButton.Name = "TestButton";
-            this.TestButton.Size = new System.Drawing.Size(75, 23);
-            this.TestButton.TabIndex = 4;
-            this.TestButton.Text = "TestButton";
-            this.TestButton.UseVisualStyleBackColor = true;
-            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
-            // 
-            // kafDataSet1
-            // 
-            this.kafDataSet1.DataSetName = "KafDataSet";
-            this.kafDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // кодDataGridViewTextBoxColumn
             // 
@@ -164,17 +109,91 @@
             this.kloadDataGridViewTextBoxColumn.HeaderText = "Загрузка";
             this.kloadDataGridViewTextBoxColumn.Name = "kloadDataGridViewTextBoxColumn";
             // 
-            // ksalaryDataGridViewTextBoxColumn
+            // k_parm_time
             // 
-            this.ksalaryDataGridViewTextBoxColumn.DataPropertyName = "k_salary";
-            this.ksalaryDataGridViewTextBoxColumn.HeaderText = "Зарплата";
-            this.ksalaryDataGridViewTextBoxColumn.Name = "ksalaryDataGridViewTextBoxColumn";
+            this.k_parm_time.DataPropertyName = "k_parm_time";
+            this.k_parm_time.HeaderText = "Совместительство";
+            this.k_parm_time.Name = "k_parm_time";
+            this.k_parm_time.Width = 150;
+            // 
+            // kafDBBindingSource1
+            // 
+            this.kafDBBindingSource1.DataMember = "KafDB";
+            this.kafDBBindingSource1.DataSource = this.kafedra1DataSet;
+            // 
+            // kafedra1DataSet
+            // 
+            this.kafedra1DataSet.DataSetName = "Kafedra1DataSet";
+            this.kafedra1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Введите значение:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(165, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // NameButton
+            // 
+            this.NameButton.Location = new System.Drawing.Point(393, 18);
+            this.NameButton.Name = "NameButton";
+            this.NameButton.Size = new System.Drawing.Size(75, 23);
+            this.NameButton.TabIndex = 3;
+            this.NameButton.Text = "Поиск";
+            this.NameButton.UseVisualStyleBackColor = true;
+            this.NameButton.Click += new System.EventHandler(this.NameButton_Click);
+            // 
+            // TestButton
+            // 
+            this.TestButton.Location = new System.Drawing.Point(495, 18);
+            this.TestButton.Name = "TestButton";
+            this.TestButton.Size = new System.Drawing.Size(75, 23);
+            this.TestButton.TabIndex = 4;
+            this.TestButton.Text = "TestButton";
+            this.TestButton.UseVisualStyleBackColor = true;
+            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
+            // 
+            // kafDBTableAdapter1
+            // 
+            this.kafDBTableAdapter1.ClearBeforeFill = true;
+            // 
+            // save_button
+            // 
+            this.save_button.Location = new System.Drawing.Point(603, 17);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(75, 23);
+            this.save_button.TabIndex = 5;
+            this.save_button.Text = "Сохранить";
+            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
+            // 
+            // to_excel_button
+            // 
+            this.to_excel_button.Location = new System.Drawing.Point(718, 17);
+            this.to_excel_button.Name = "to_excel_button";
+            this.to_excel_button.Size = new System.Drawing.Size(105, 23);
+            this.to_excel_button.TabIndex = 6;
+            this.to_excel_button.Text = "Экспорт в Excel";
+            this.to_excel_button.UseVisualStyleBackColor = true;
+            this.to_excel_button.Click += new System.EventHandler(this.to_excel_button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 511);
+            this.Controls.Add(this.to_excel_button);
+            this.Controls.Add(this.save_button);
             this.Controls.Add(this.TestButton);
             this.Controls.Add(this.NameButton);
             this.Controls.Add(this.textBox1);
@@ -184,9 +203,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDBBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kafDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kafDBBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kafedra1DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,21 +213,22 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private KafDataSet kafDataSet;
-        private System.Windows.Forms.BindingSource kafDBBindingSource;
-        private KafDataSetTableAdapters.KafDBTableAdapter kafDBTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button NameButton;
         private System.Windows.Forms.Button TestButton;
-        private KafDataSet kafDataSet1;
+        private Kafedra1DataSet kafedra1DataSet;
+        private System.Windows.Forms.BindingSource kafDBBindingSource1;
+        private Kafedra1DataSetTableAdapters.KafDBTableAdapter kafDBTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kfioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kpostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kdegreeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ksubjectDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kloadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ksalaryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn k_parm_time;
+        private System.Windows.Forms.Button save_button;
+        private System.Windows.Forms.Button to_excel_button;
     }
 }
 
