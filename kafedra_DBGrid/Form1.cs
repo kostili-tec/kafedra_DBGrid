@@ -42,22 +42,7 @@ namespace kafedra_DBGrid
                         }
             }
         }
-
-        private void TestButton_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-                if (dataGridView1[1, i].FormattedValue.ToString().
-                    Contains(textBox1.Text.Trim()))
-                {
-                    dataGridView1.CurrentCell = dataGridView1[0, i];
-                    if (i < dataGridView1.RowCount - 1)
-                        i++;
-                    else
-                        i = 0;
-                    return;
-                }
-        }
-
+        
         //поиск фильтр
 
         private void textBox1_TextChanged(object sender, EventArgs e) 

@@ -42,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.NameButton = new System.Windows.Forms.Button();
-            this.TestButton = new System.Windows.Forms.Button();
             this.kafDBTableAdapter1 = new kafedra_DBGrid.Kafedra1DataSetTableAdapters.KafDBTableAdapter();
             this.save_button = new System.Windows.Forms.Button();
             this.to_excel_button = new System.Windows.Forms.Button();
@@ -153,23 +152,13 @@
             this.NameButton.UseVisualStyleBackColor = true;
             this.NameButton.Click += new System.EventHandler(this.NameButton_Click);
             // 
-            // TestButton
-            // 
-            this.TestButton.Location = new System.Drawing.Point(495, 18);
-            this.TestButton.Name = "TestButton";
-            this.TestButton.Size = new System.Drawing.Size(75, 23);
-            this.TestButton.TabIndex = 4;
-            this.TestButton.Text = "TestButton";
-            this.TestButton.UseVisualStyleBackColor = true;
-            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
-            // 
             // kafDBTableAdapter1
             // 
             this.kafDBTableAdapter1.ClearBeforeFill = true;
             // 
             // save_button
             // 
-            this.save_button.Location = new System.Drawing.Point(603, 17);
+            this.save_button.Location = new System.Drawing.Point(501, 18);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(75, 23);
             this.save_button.TabIndex = 5;
@@ -179,7 +168,7 @@
             // 
             // to_excel_button
             // 
-            this.to_excel_button.Location = new System.Drawing.Point(718, 17);
+            this.to_excel_button.Location = new System.Drawing.Point(623, 17);
             this.to_excel_button.Name = "to_excel_button";
             this.to_excel_button.Size = new System.Drawing.Size(105, 23);
             this.to_excel_button.TabIndex = 6;
@@ -194,7 +183,6 @@
             this.ClientSize = new System.Drawing.Size(980, 511);
             this.Controls.Add(this.to_excel_button);
             this.Controls.Add(this.save_button);
-            this.Controls.Add(this.TestButton);
             this.Controls.Add(this.NameButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -216,7 +204,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button NameButton;
-        private System.Windows.Forms.Button TestButton;
         private Kafedra1DataSet kafedra1DataSet;
         private System.Windows.Forms.BindingSource kafDBBindingSource1;
         private Kafedra1DataSetTableAdapters.KafDBTableAdapter kafDBTableAdapter1;
